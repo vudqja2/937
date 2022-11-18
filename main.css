@@ -34,25 +34,23 @@ body > #logo > div{
   height: calc(var(--n) * 4);
   border: 1px var(--bg) solid;
 }
-body > #logo > div.filled{
-  background: var(--bg);
-}
-body > #logo > div.empty{
-  background: var(--cl);
-}
 body > #logo > div:nth-child(1){
+  background: var(--cl);
   top: 25%;
   left: 25%;
 }
 body > #logo > div:nth-child(2){
+  background: var(--bg);
   top: 25%;
   left: 50%;
 }
 body > #logo > div:nth-child(3){
+  background: var(--cl);
   top: 50%;
   left: 25%;
 }
 body > #logo > div:nth-child(4){
+  background: var(--bg);
   top: 50%;
   left: 50%;
 }
