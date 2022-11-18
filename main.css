@@ -13,8 +13,46 @@
   color: var(--cl);
 }
 body{
-  background: var(--bg);
   width: 100vw;
   height: 100vh;
+  background: var(--bg);
   overflow: hidden;
+}
+body > #logo{
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(var(--n) * 16);
+  height: calc(var(--n) * 16);
+  background: var(--cl);
+  border-radius: 50%;
+}
+body > #logo > div{
+  position: absolute;
+  width: calc(var(--n) * 4);
+  height: calc(var(--n) * 4);
+  border: 1px var(--bg) solid;
+}
+body > #logo > div.filled{
+  background: var(--bg);
+}
+body > #logo > div.empty{
+  background: var(--cl);
+}
+body > #logo > div:nth-child(1){
+  top: 25%;
+  left: 25%;
+}
+body > #logo > div:nth-child(2){
+  top: 25%;
+  left: 50%;
+}
+body > #logo > div:nth-child(3){
+  top: 50%;
+  left: 25%;
+}
+body > #logo > div:nth-child(4){
+  top: 50%;
+  left: 50%;
 }
