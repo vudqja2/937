@@ -1,4 +1,4 @@
 # html
 just html
 
-https://vudqja2.github.com/937/
+https://vudqja2.github.io/937/
