@@ -1,1 +1,1 @@
-document.documentElement.requestFullscreen();
+
