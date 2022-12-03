@@ -1,4 +1,4 @@
 # html
 just html
 
-https://vudqja2.tk/
+http://vudqja2.tk/
