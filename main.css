@@ -18,7 +18,7 @@ body{
   background: var(--bg);
   overflow: hidden;
 }
-body > #logo{
+body > #logobox{
   position: relative;
   top: 50%;
   left: 50%;
@@ -28,29 +28,10 @@ body > #logo{
   background: var(--cl);
   border-radius: 50%;
 }
-body > #logo > div{
+body > #logobox > img{
   position: absolute;
-  width: calc(var(--n) * 4);
-  height: calc(var(--n) * 4);
-  border: 1px var(--bg) solid;
-}
-body > #logo > div:nth-child(1){
-  background: var(--cl);
-  top: 25%;
-  left: 25%;
-}
-body > #logo > div:nth-child(2){
-  background: var(--bg);
-  top: 25%;
-  left: 50%;
-}
-body > #logo > div:nth-child(3){
-  background: var(--cl);
-  top: 50%;
-  left: 25%;
-}
-body > #logo > div:nth-child(4){
-  background: var(--bg);
-  top: 50%;
-  left: 50%;
+  top: 12.5%;
+  left: 12.5%;
+  width: calc(var(--n) * 12);
+  height: calc(var(--n) * 12);
 }
