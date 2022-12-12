@@ -1,8 +1,7 @@
 body > #logobox{
   position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  top: calc(50% - var(--n) * 10);
+  left: calc(50% - var(--n) * 10);
   width: calc(var(--n) * 20);
   height: calc(var(--n) * 20);
   background: var(--cl);
@@ -10,7 +9,7 @@ body > #logobox{
   transition: transform 1s linear;
 }
 body > #logobox.active{
-  transform: translate(-50%, -50%) rotate(360deg);
+  transform: rotate(360deg);
 }
 body > #logobox > img{
   position: absolute;
