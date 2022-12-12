@@ -20,3 +20,8 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 //firebase-----------------------------------------------------------------------------------------
+
+const logobox = document.querySelector('#logobox');
+logobox.addEventListener('click', () => {
+  logobox.classList.toggle('active');
+})
