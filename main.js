@@ -21,6 +21,7 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 //firebase-----------------------------------------------------------------------------------------
 
+//logo animation
 const logobox = document.querySelector('#logobox');
 logobox.addEventListener('click', () => {
   logobox.classList.toggle('active');
