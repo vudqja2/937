@@ -6,10 +6,11 @@ body > #logobox{
   height: calc(var(--n) * 20);
   background: var(--cl);
   border-radius: 50%;
-  transition: transform 1s linear;
+  transition: transform 0.5s linear, box-shadow 0.5s linear;
 }
 body > #logobox.active{
   transform: rotate(360deg);
+  box-shadow: 0 0 0 2px var(--bg), 0 0 0 8px var(--cl);
 }
 body > #logobox > img{
   position: absolute;
