@@ -10,7 +10,7 @@ body > #logobox{
 }
 body > #logobox.active{
   transform: rotate(360deg);
-  box-shadow: 0 0 0 2px var(--bg), 0 0 0 8px var(--cl);
+  box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px var(--cl);
 }
 body > #logobox > img{
   position: absolute;
