@@ -21,8 +21,24 @@ const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 //firebase-----------------------------------------------------------------------------------------
 
+//# location
+if(location.href.includes('#')){
+  switch(location.href.split('#')[1]){
+    case '404':
+      say('it was 404');
+      break;
+  }
+}
+
 //logo animation
 const logobox = document.querySelector('#logobox');
 logobox.addEventListener('click', () => {
   logobox.classList.toggle('active');
 })
+
+//function
+/**say message html*/
+function say(message){
+  document.querySelector('#say').classList.add('say');
+  document.querySelector('#say').innerHTML = message;
+}
