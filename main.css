@@ -1,3 +1,23 @@
+:root{
+  --n: 1vmin;
+  --bg: black;
+  --cl: white;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: default;
+  color: var(--cl);
+}
+body{
+  width: 100vw;
+  height: 100vh;
+  background: var(--bg);
+  overflow: hidden;
+}
 body > #logobox{
   position: relative;
   top: calc(50% - var(--n) * 10);
@@ -8,9 +28,8 @@ body > #logobox{
   border-radius: 50%;
   transition: transform 0.5s linear, box-shadow 0.5s linear;
 }
-body > #logobox.active{
+body > #logobox.hover{
   transform: rotate(360deg);
-  box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px var(--cl);
 }
 body > #logobox > img{
   position: absolute;
@@ -19,17 +38,7 @@ body > #logobox > img{
   width: calc(var(--n) * 15);
   height: calc(var(--n) * 15);
 }
-.say{
-  position: absolute;
-  right: calc(var(--n) * 5);
-  bottom: calc(var(--n) * 5);
-  width: calc(var(--n) * 40);
-  height: calc(var(--n) * 10);
-  background: var(--cl);
-  border-radius: calc(var(--n) * 5);
-  color: var(--bg);
-  font-weight: 1000;
-  text-align: center;
-  line-height: calc(var(--n) * 10);
-}
 
+.hover:hover{
+  box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px var(--cl);
+}
