@@ -23,19 +23,10 @@ const analytics = getAnalytics(app);
 
 //dom
 const logobox = document.querySelector('#logobox');
-const saybox = document.querySelector('#say');
 
 //events
 logobox.addEventListener('click', () => {
-  logobox.classList.toggle('active');
-})
-saybox.addEventListener('click', () => {
-  saybox.classList.remove('say')
+  logobox.classList.toggle('hover');
 })
 
 //function
-/**say message html*/
-function say(message){
-  saybox.classList.add('say');
-  say.innerHTML = message;
-}
