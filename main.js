@@ -1,32 +1,164 @@
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-analytics.js";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+let div = document.querySelectorAll('div');
+let b1 = [1, 'red', 'blue', 'white', div[2], div[3], div[4]];
+let b2 = [5, 'red', 'green', 'white', div[6], div[7], div[8]];
+let b3 = [9, 'orange', 'blue', 'white', div[10], div[11], div[12]];
+let b4 = [13, 'orange', 'green', 'white', div[14], div[15], div[16]];
+let b5 = [17, 'red', 'blue', 'yellow', div[18], div[19], div[20]];
+let b6 = [21, 'red', 'green', 'yellow', div[22], div[23], div[24]];
+let b7 = [25, 'orange', 'blue', 'yellow', div[26], div[27], div[28]];
+let b8 = [29, 'orange', 'green', 'yellow', div[30], div[31], div[32]];
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyCsbikEn0nPI_UUIOxCGIZ8B5ODrEznZe4",
-  authDomain: "vudqja2-65aa6.firebaseapp.com",
-  projectId: "vudqja2-65aa6",
-  storageBucket: "vudqja2-65aa6.appspot.com",
-  messagingSenderId: "526157161064",
-  appId: "1:526157161064:web:1f2bd1dc253570fd8bd1dd",
-  measurementId: "G-QKSZ7NVEH0"
-};
+let set = () => {
+  b1[4].style.backgroundColor = b1[4 - 3];
+  b1[5].style.backgroundColor = b1[5 - 3];
+  b1[6].style.backgroundColor = b1[6 - 3];
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-//firebase-----------------------------------------------------------------------------------------
+  b2[4].style.backgroundColor = b2[4 - 3];
+  b2[5].style.backgroundColor = b2[5 - 3];
+  b2[6].style.backgroundColor = b2[6 - 3];
 
-//dom
-const logobox = document.querySelector('#logobox');
+  b3[4].style.backgroundColor = b3[4 - 3];
+  b3[5].style.backgroundColor = b3[5 - 3];
+  b3[6].style.backgroundColor = b3[6 - 3];
 
-//events
-logobox.addEventListener('click', () => {
-  logobox.classList.toggle('hover');
+  b4[4].style.backgroundColor = b4[4 - 3];
+  b4[5].style.backgroundColor = b4[5 - 3];
+  b4[6].style.backgroundColor = b4[6 - 3];
+
+  b5[4].style.backgroundColor = b5[4 - 3];
+  b5[5].style.backgroundColor = b5[5 - 3];
+  b5[6].style.backgroundColor = b5[6 - 3];
+
+  b6[4].style.backgroundColor = b6[4 - 3];
+  b6[5].style.backgroundColor = b6[5 - 3];
+  b6[6].style.backgroundColor = b6[6 - 3];
+
+  b7[4].style.backgroundColor = b7[4 - 3];
+  b7[5].style.backgroundColor = b7[5 - 3];
+  b7[6].style.backgroundColor = b7[6 - 3];
+
+  b8[4].style.backgroundColor = b8[4 - 3];
+  b8[5].style.backgroundColor = b8[5 - 3];
+  b8[6].style.backgroundColor = b8[6 - 3];
+}
+
+document.addEventListener('keydown', e => {
+  if(e.code == 'KeyR'){
+    if(e.shiftKey == false){
+      [b2[2], b6[2], b8[2], b4[2]] = [b4[2], b2[2], b6[2], b8[2]];
+      [b2[3], b6[1], b8[3], b4[1]] = [b4[1], b2[3], b6[1], b8[3]];
+      [b2[1], b6[3], b8[1], b4[3]] = [b4[3], b2[1], b6[3], b8[1]];
+    }else{
+      [b4[2], b2[2], b6[2], b8[2]] = [b2[2], b6[2], b8[2], b4[2]];
+      [b4[1], b2[3], b6[1], b8[3]] = [b2[3], b6[1], b8[3], b4[1]];
+      [b4[3], b2[1], b6[3], b8[1]] = [b2[1], b6[3], b8[1], b4[3]];
+    }  
+  }    
+  if(e.code == 'KeyL'){
+    if(e.shiftKey == false){
+      [b3[2], b1[2], b5[2], b7[2]] = [b1[2], b5[2], b7[2], b3[2]];
+      [b3[1], b1[3], b5[1], b7[3]] = [b1[3], b5[1], b7[3], b3[1]];
+      [b3[3], b1[1], b5[3], b7[1]] = [b1[1], b5[3], b7[1], b3[3]];
+    }else{
+      [b1[2], b5[2], b7[2], b3[2]] = [b3[2], b1[2], b5[2], b7[2]];
+      [b1[3], b5[1], b7[3], b3[1]] = [b3[1], b1[3], b5[1], b7[3]];
+      [b1[1], b5[3], b7[1], b3[3]] = [b3[3], b1[1], b5[3], b7[1]];
+  }
+  }
+  if(e.code == 'KeyU'){
+    if(e.shiftKey == false){
+      [b1[1], b2[1], b6[1], b5[1]] = [b2[1], b6[1], b5[1], b1[1]];
+      [b1[3], b2[2], b6[3], b5[2]] = [b2[2], b6[3], b5[2], b1[3]];
+      [b1[2], b2[3], b6[2], b5[3]] = [b2[3], b6[2], b5[3], b1[2]];
+    }else{
+      [b2[1], b6[1], b5[1], b1[1]] = [b1[1], b2[1], b6[1], b5[1]];
+      [b2[2], b6[3], b5[2], b1[3]] = [b1[3], b2[2], b6[3], b5[2]];
+      [b2[3], b6[2], b5[3], b1[2]] = [b1[2], b2[3], b6[2], b5[3]];
+    }
+  }
+  if(e.code == 'KeyD'){
+    if(e.shiftKey == false){
+      [b4[1], b8[1], b7[1], b3[1]] = [b3[1], b4[1], b8[1], b7[1]];
+      [b4[2], b8[3], b7[2], b3[3]] = [b3[3], b4[2], b8[3], b7[2]];
+      [b4[3], b8[2], b7[3], b3[2]] = [b3[2], b4[3], b8[2], b7[3]];
+    }else{
+      [b3[1], b4[1], b8[1], b7[1]] = [b4[1], b8[1], b7[1], b3[1]];
+      [b3[3], b4[2], b8[3], b7[2]] = [b4[2], b8[3], b7[2], b3[3]];
+      [b3[2], b4[3], b8[2], b7[3]] = [b4[3], b8[2], b7[3], b3[2]];
+    }
+  }
+  if(e.code == 'KeyF'){
+    if(e.shiftKey == false){
+      [b1[3], b2[3], b4[3], b3[3]] = [b3[3], b1[3], b2[3], b4[3]];
+      [b1[1], b2[2], b4[1], b3[2]] = [b3[2], b1[1], b2[2], b4[1]];
+      [b1[2], b2[1], b4[2], b3[1]] = [b3[1], b1[2], b2[1], b4[2]];
+    }else{
+      [b3[3], b1[3], b2[3], b4[3]] = [b1[3], b2[3], b4[3], b3[3]];
+      [b3[2], b1[1], b2[2], b4[1]] = [b1[1], b2[2], b4[1], b3[2]];
+      [b3[1], b1[2], b2[1], b4[2]] = [b1[2], b2[1], b4[2], b3[1]];
+    }
+  }
+  if(e.code == 'KeyB'){
+    if(e.shiftKey == false){
+      [b7[3], b5[3], b6[3], b8[3]] = [b5[3], b6[3], b8[3], b7[3]];
+      [b7[2], b5[1], b6[2], b8[1]] = [b5[1], b6[2], b8[1], b7[2]];
+      [b7[1], b5[2], b6[1], b8[2]] = [b5[2], b6[1], b8[2], b7[1]];
+    }else{
+      [b5[3], b6[3], b8[3], b7[3]] = [b7[3], b5[3], b6[3], b8[3]];
+      [b5[1], b6[2], b8[1], b7[2]] = [b7[2], b5[1], b6[2], b8[1]];
+      [b5[2], b6[1], b8[2], b7[1]] = [b7[1], b5[2], b6[1], b8[2]];
+    }
+  }
+  if(e.code == 'KeyX'){
+    if(e.shiftKey == false){
+      [b2[2], b6[2], b8[2], b4[2]] = [b4[2], b2[2], b6[2], b8[2]];
+      [b2[3], b6[1], b8[3], b4[1]] = [b4[1], b2[3], b6[1], b8[3]];
+      [b2[1], b6[3], b8[1], b4[3]] = [b4[3], b2[1], b6[3], b8[1]];
+      [b1[2], b5[2], b7[2], b3[2]] = [b3[2], b1[2], b5[2], b7[2]];
+      [b1[3], b5[1], b7[3], b3[1]] = [b3[1], b1[3], b5[1], b7[3]];
+      [b1[1], b5[3], b7[1], b3[3]] = [b3[3], b1[1], b5[3], b7[1]];
+    }else{
+      [b4[2], b2[2], b6[2], b8[2]] = [b2[2], b6[2], b8[2], b4[2]];
+      [b4[1], b2[3], b6[1], b8[3]] = [b2[3], b6[1], b8[3], b4[1]];
+      [b4[3], b2[1], b6[3], b8[1]] = [b2[1], b6[3], b8[1], b4[3]];
+      [b3[2], b1[2], b5[2], b7[2]] = [b1[2], b5[2], b7[2], b3[2]];
+      [b3[1], b1[3], b5[1], b7[3]] = [b1[3], b5[1], b7[3], b3[1]];
+      [b3[3], b1[1], b5[3], b7[1]] = [b1[1], b5[3], b7[1], b3[3]];
+    }
+  }
+  if(e.code == 'KeyY'){
+    if(e.shiftKey == false){
+      [b1[1], b2[1], b6[1], b5[1]] = [b2[1], b6[1], b5[1], b1[1]];
+      [b1[3], b2[2], b6[3], b5[2]] = [b2[2], b6[3], b5[2], b1[3]];
+      [b1[2], b2[3], b6[2], b5[3]] = [b2[3], b6[2], b5[3], b1[2]];
+      [b3[1], b4[1], b8[1], b7[1]] = [b4[1], b8[1], b7[1], b3[1]];
+      [b3[3], b4[2], b8[3], b7[2]] = [b4[2], b8[3], b7[2], b3[3]];
+      [b3[2], b4[3], b8[2], b7[3]] = [b4[3], b8[2], b7[3], b3[2]];
+    }else{
+      [b2[1], b6[1], b5[1], b1[1]] = [b1[1], b2[1], b6[1], b5[1]];
+      [b2[2], b6[3], b5[2], b1[3]] = [b1[3], b2[2], b6[3], b5[2]];
+      [b2[3], b6[2], b5[3], b1[2]] = [b1[2], b2[3], b6[2], b5[3]];
+      [b4[1], b8[1], b7[1], b3[1]] = [b3[1], b4[1], b8[1], b7[1]];
+      [b4[2], b8[3], b7[2], b3[3]] = [b3[3], b4[2], b8[3], b7[2]];
+      [b4[3], b8[2], b7[3], b3[2]] = [b3[2], b4[3], b8[2], b7[3]];
+    }
+  }
+  if(e.code == 'KeyZ'){
+    if(e.shiftKey == false){
+      [b1[3], b2[3], b4[3], b3[3]] = [b3[3], b1[3], b2[3], b4[3]];
+      [b1[1], b2[2], b4[1], b3[2]] = [b3[2], b1[1], b2[2], b4[1]];
+      [b1[2], b2[1], b4[2], b3[1]] = [b3[1], b1[2], b2[1], b4[2]];
+      [b5[3], b6[3], b8[3], b7[3]] = [b7[3], b5[3], b6[3], b8[3]];
+      [b5[1], b6[2], b8[1], b7[2]] = [b7[2], b5[1], b6[2], b8[1]];
+      [b5[2], b6[1], b8[2], b7[1]] = [b7[1], b5[2], b6[1], b8[2]];
+    }else{
+      [b3[3], b1[3], b2[3], b4[3]] = [b1[3], b2[3], b4[3], b3[3]];
+      [b3[2], b1[1], b2[2], b4[1]] = [b1[1], b2[2], b4[1], b3[2]];
+      [b3[1], b1[2], b2[1], b4[2]] = [b1[2], b2[1], b4[2], b3[1]];
+      [b7[3], b5[3], b6[3], b8[3]] = [b5[3], b6[3], b8[3], b7[3]];
+      [b7[2], b5[1], b6[2], b8[1]] = [b5[1], b6[2], b8[1], b7[2]];
+      [b7[1], b5[2], b6[1], b8[2]] = [b5[2], b6[1], b8[2], b7[1]];
+    }
+  }
+  set();
 })
-
-//function
