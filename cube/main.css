@@ -1,0 +1,79 @@
+:root{
+  --i:25vmin;
+}
+body{
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
+body > div{
+  position: absolute;
+  width: var(--i);
+  height: var(--i);
+  transform-style: preserve-3d;
+  transform: rotateX(-35deg) rotateY(-45deg);
+}
+body > div > div{
+  position: absolute;
+  width: calc(var(--i) / 2);
+  height: calc(var(--i) / 2);
+  transform-style: preserve-3d;
+}
+body > div > div:nth-of-type(1){
+  transform: translateZ(calc(var(--i) / 4));
+}
+body > div > div:nth-of-type(2){
+  transform: translateX(calc(var(--i) / 2)) translateZ(calc(var(--i) / 4));
+}
+body > div > div:nth-of-type(3){
+  transform: translateY(calc(var(--i) / 2)) translateZ(calc(var(--i) / 4));
+}
+body > div > div:nth-of-type(4){
+  transform: translateX(calc(var(--i) / 2)) translateY(calc(var(--i) / 2)) translateZ(calc(var(--i) / 4));
+}
+body > div > div:nth-of-type(5){
+  transform: translateZ(calc(var(--i) / 4 * -1));
+}
+body > div > div:nth-of-type(6){
+  transform: translateX(calc(var(--i) / 2)) translateZ(calc(var(--i) / 4 * -1));
+}
+body > div > div:nth-of-type(7){
+  transform: translateY(calc(var(--i) / 2)) translateZ(calc(var(--i) / 4 * -1));
+}
+body > div > div:nth-of-type(8){
+  transform: translateX(calc(var(--i) / 2)) translateY(calc(var(--i) / 2)) translateZ(calc(var(--i) / 4 * -1));
+}
+body > div > div > div{
+  position: absolute;
+  width: calc(var(--i) / 2);
+  height: calc(var(--i) / 2);
+  transform-style: preserve-3d;
+}
+body > div > div > .up{
+  background-color: red;
+  transform: rotateX(90deg) translateZ(calc(var(--i) / 4));
+}
+body > div > div > .down{
+  background-color: orange;
+  transform: rotateX(-90deg) translateZ(calc(var(--i) * 1.35));
+}
+body > div > div > .left{
+  background-color: blue;
+  transform: rotateY(-90deg) translateZ(calc(var(--i) * 1.35));
+}
+body > div > div > .right{
+  background-color: green;
+  transform: rotateY(90deg) translateZ(calc(var(--i) / 4));
+}
+body > div > div > .front{
+  background-color: white;
+  transform: rotateY(0deg) translateZ(calc(var(--i) / 4));
+}
+body > div > div > .back{
+  background-color: yellow;
+  transform: rotateY(180deg) translateZ(calc(var(--i) * 1.35));
+}
