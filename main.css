@@ -70,10 +70,10 @@ body > #menu > span > a{
   border: white 2px solid;
   border-radius: 50%;
   color: var(--bg);
-  font-size: 1.5em;
+  font-size: calc(var(--n) * 5);
   font-weight: 900;
   text-align: center;
-  line-height: calc(var(--n) * 14);
+  line-height: calc(var(--n) * 13.5);
   transform: rotate(calc(var(--i) * 360deg / -8 + 90deg));
   transition: background linear 0.5s;
 }
