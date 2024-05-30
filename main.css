@@ -37,10 +37,10 @@ body > #menu > #logobox{
   height: calc(var(--n) * 20);
   background: var(--cl);
   border-radius: 50%;
-  transition: transform 0.5s linear, box-shadow 0.5s linear;
+  transition: transform 0.8s linear, box-shadow 0.8s linear;
 }
 body > #menu.act > #logobox{
-  transform: rotate(360deg);
+  transform: rotate(-360deg);
   box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px var(--cl);
 }
 body > #menu > #logobox > img{
@@ -56,11 +56,11 @@ body > #menu > span{
   height: calc(var(--n) * 15);
   border-radius: 50%;
   transform: rotate(calc(var(--i) * 360deg / 8 + 90deg)) translateX(calc(var(--n) * 0));
-  transition: transform 0.5s linear calc((7 - var(--i)) * 0.1s);
+  transition: transform 0.1s linear calc((7 - var(--i)) * 0.1s);
 }
 body > #menu.act > span{
   transform: rotate(calc(var(--i) * 360deg / 8 - 90deg)) translateX(calc(var(--n) * 35));
-  transition: transform 0.5s linear calc(var(--i) * 0.1s);
+  transition: transform 0.1s linear calc(var(--i) * 0.1s);
 }
 body > #menu > span > a{
   position: absolute;
@@ -70,6 +70,7 @@ body > #menu > span > a{
   border: white 2px solid;
   border-radius: 50%;
   color: var(--bg);
+  text-decoration-line: none;
   font-size: calc(var(--n) * 5);
   font-weight: 900;
   text-align: center;
