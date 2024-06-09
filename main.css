@@ -56,11 +56,11 @@ body > #menu > span{
   height: calc(var(--n) * 15);
   border-radius: 50%;
   transform: rotate(calc(var(--i) * 360deg / 8 + 90deg)) translateX(calc(var(--n) * 0));
-  transition: transform 0.1s linear calc((7 - var(--i)) * 0.1s);
+  transition: transform 0.28s linear calc((7 - var(--i)) * 0.08s);
 }
 body > #menu.act > span{
   transform: rotate(calc(var(--i) * 360deg / 8 - 90deg)) translateX(calc(var(--n) * 35));
-  transition: transform 0.1s linear calc(var(--i) * 0.1s);
+  transition: transform 0.28s linear calc(var(--i) * 0.08s);
 }
 body > #menu > span > a{
   position: absolute;
@@ -71,12 +71,12 @@ body > #menu > span > a{
   border-radius: 50%;
   color: var(--bg);
   text-decoration-line: none;
-  font-size: calc(var(--n) * 5);
+  font-size: calc(var(--n) * 4);
   font-weight: 900;
   text-align: center;
-  line-height: calc(var(--n) * 13.5);
+  line-height: calc(var(--n) * 13.6);
   transform: rotate(calc(var(--i) * 360deg / -8 + 90deg));
-  transition: background linear 0.5s;
+  transition: background-color linear 0.5s;
 }
 body > #menu > span > a:hover{
   color: var(--cl);
