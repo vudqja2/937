@@ -1,3 +1,6 @@
+:root{
+  --time: 0.06s;
+}
 *{
   box-sizing: border-box;
   margin: 0;
@@ -13,6 +16,7 @@ body{
   align-items: center;
   background-color: black;
   user-select: none;
+  overflow: hidden;
 }
 body > div{
   position: relative;
@@ -30,17 +34,25 @@ body > div > span{
   border-radius: 50%;
   color: white;
   font-size: 2.9vmin;
+  font-weight: bold;
   text-align: center;
-  line-height: calc(7.15vmin);
+  line-height: 7.6vmin;
+  transition: all linear var(--time);
+  overflow: hidden;
 }
-body > div > div#chr{
-  --x: 3;
-  --y: 3;
-  position: absolute;
-  left: calc(1vmin + 8vmin * (var(--x) - 1));
-  top: calc(1vmin + 8vmin * (var(--y) - 1));
-  width: 6vmin;
-  height: 6vmin;
-  border-radius: 50%;
+body > div > span.active{
   background-color: white;
+  color: black;
+  animation: active var(--time) linear;
+}
+@keyframes active {
+  0%{
+    border: 2px white solid;
+    font-size: 0;
+  }
+  100%{
+    border: 4vmin white solid;
+    font-size: 2.9vmin;
+    color: black;
+  }
 }
