@@ -1,121 +1,84 @@
+:root{
+  --n: 1vmin;
+  --bg: black;
+  --cl: white;
+}
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    user-select: none;
-    cursor: default;
-    color: white;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: default;
+  color: var(--cl);
 }
 body{
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    background-color: black;
-    overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background: var(--bg);
+  overflow: hidden;
 }
-body > span{
-    display: none;
+body > #menu{
+  position: relative;
+  width: calc(var(--n) * 70);
+  height: calc(var(--n) * 70);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-body.playing > span{
-    display: flex;
-    position: absolute;
-    top: calc(50vh - 28vmin - 4px);
-    width: 20vmin;
-    height: 20vmin;
-    border: 4px white solid;
-    box-sizing: content-box;
-    overflow: hidden;
+body > #menu > #logobox{
+  position: absolute;
+  top: calc(50% - var(--n) * 10);
+  left: calc(50% - var(--n) * 10);
+  width: calc(var(--n) * 20);
+  height: calc(var(--n) * 20);
+  background: var(--cl);
+  border-radius: 50%;
+  transition: transform 0.8s linear, box-shadow 0.8s linear;
 }
-body > span#board{
-    display: grid;
-    top: calc(50vh - 46vmin);
-    left: calc(50vw - 20vmin - 4px);
-    width: 40vmin;
-    height: 92vmin;
-    border-top: none;
-    grid-template-columns: repeat(10, 1fr);
-    grid-template-rows: repeat(23, 1fr);
+body > #menu.act > #logobox{
+  transform: rotate(-360deg);
+  box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px var(--cl);
 }
-body > span#hold{
-    left: calc(50vw - 45vmin - 4px);
+body > #menu > #logobox > img{
+  position: absolute;
+  top: 12.5%;
+  left: 12.5%;
+  width: calc(var(--n) * 15);
+  height: calc(var(--n) * 15);
 }
-body > span#next{
-    right: calc(50vw - 45vmin - 4px);
+body > #menu > span{
+  position: absolute;
+  width: calc(var(--n) * 15);
+  height: calc(var(--n) * 15);
+  border-radius: 50%;
+  transform: rotate(calc(var(--i) * 360deg / 8 + 90deg)) translateX(calc(var(--n) * 0));
+  transition: transform 0.28s linear calc((7 - var(--i)) * 0.08s);
 }
-body.playing > span > div{
-    display: flex;
-    position: absolute;
-    top: calc(50vw - 38vmin);
-    left: calc(50vw - 35vmin);
-    width: calc(20vmin/6);
-    height: calc(20vmin/6);
+body > #menu.act > span{
+  transform: rotate(calc(var(--i) * 360deg / 8 - 90deg)) translateX(calc(var(--n) * 35));
+  transition: transform 0.28s linear calc(var(--i) * 0.08s);
 }
-body > h1{
-    display: none;
+body > #menu > span > a{
+  position: absolute;
+  width: calc(var(--n) * 15);
+  height: calc(var(--n) * 15); 
+  background: var(--cl);
+  border: white 2px solid;
+  border-radius: 50%;
+  color: var(--bg);
+  text-decoration-line: none;
+  font-size: calc(var(--n) * 4);
+  font-weight: 900;
+  text-align: center;
+  line-height: calc(var(--n) * 13.6);
+  transform: rotate(calc(var(--i) * 360deg / -8 + 90deg));
+  transition: background-color linear 0.5s;
 }
-body.playing > h1{
-    display: inline;
-    position: absolute;
-    top: calc(50vh - 34vmin);
-    width: 20vmin;
-    height: 6vmin;
-    font-size: 4vmin;
-    text-align: center;
-    line-height: 5.75vmin;
-    box-sizing: content-box;
-}
-body > h1#playbtn{
-    display: inline;
-    position: absolute;
-    top: calc(50vh - 1vmin);
-    left: calc(50vw - 15vmin);
-    width: 30vmin;
-    height: 10vmin;
-    border: 2px white solid;
-    border-radius: 5vmin;
-    font-size: 6vmin;
-    text-align: center;
-    line-height: 9vmin;
-}
-body.playing > h1#playbtn{
-    display: none;
-}
-body > h1#score{
-    top: calc(50vh + 46vmin);
-    left: calc(50vw - 10vmin);
-    height: 4vmin;
-    font-size: 3vmin;
-    line-height: 4.5vmin;
-}
-body > h1#hold{
-    left: calc(50vw - 45vmin);
-}
-body > h1#next{
-    right: calc(50vw - 45vmin);
-}
-body > div{
-    position: absolute;
-    top: calc(50vh - 46vmin);
-    width: 4px;
-    height: 12vmin;
-    background-color: black;
-}
-body > div#lw{
-    left: calc(50vw - 20vmin - 4px);
-}
-body > div#rw{
-    right: calc(50vw - 20vmin - 4px);
-}
-body > span#line{
-    display: none;
-}
-body.playing > span#line{
-    display: flex;
-    position: absolute;
-    top: calc(50vh - 34vmin);
-    left: calc(50vw - 20vmin);
-    width: 40vmin;
-    height: 1px;
-    border: none;
-    background-color: white;
+body > #menu > span > a:hover{
+  color: var(--cl);
+  background: var(--bg);
 }
