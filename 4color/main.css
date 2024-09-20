@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+body{
+    background-color: black;
+}
+body > #board{
+    position: absolute;
+    width: 80vmin;
+    height: 80vmin;
+    top: calc(50vh - 40vmin);
+    left: calc(50vw - 40vmin);
+    background-color: white;
+    display: grid;
+    grid-template-rows: repeat(10, 1fr);
+    grid-template-columns: repeat(10, 1fr);
+}
+body > #board > .part{
+    background-color: white;
+    border: 1px black solid;
+    font-weight: bolder;
+    font-size: 5vmin;
+    text-align: center;
+    line-height: calc(7.4vmin - 2px);
+}
+body > #board.act > .part{
+    border: none;
+    font-size: 0;
+}
