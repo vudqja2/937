@@ -1,18 +1,7 @@
 const c = ['white', 'red', 'blue', 'green', 'black'];
 let part = [];
 let color = [];
-let edge = [
-    [],[],[],[],[],[],[],[],[],[],
-    [],[],[],[],[],[],[],[],[],[],
-    [],[],[],[],[],[],[],[],[],[],
-    [],[],[],[],[],[],[],[],[],[],
-    [],[],[],[],[],[],[],[],[],[],
-    [],[],[],[],[],[],[],[],[],[],
-    [],[],[],[],[],[],[],[],[],[],
-    [],[],[],[],[],[],[],[],[],[],
-    [],[],[],[],[],[],[],[],[],[],
-    [],[],[],[],[],[],[],[],[],[]
-];
+let edge = [];
 let b = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -36,7 +25,8 @@ let key = [
     [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
     [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
     [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
-]
+];
+let visited = [];
 let block = 0;
 let making = true;
 let check = {' ': 100}
@@ -52,18 +42,7 @@ function set(){
 function reset(){
     part = [];
     color = [];
-    edge = [
-        [],[],[],[],[],[],[],[],[],[],
-        [],[],[],[],[],[],[],[],[],[],
-        [],[],[],[],[],[],[],[],[],[],
-        [],[],[],[],[],[],[],[],[],[],
-        [],[],[],[],[],[],[],[],[],[],
-        [],[],[],[],[],[],[],[],[],[],
-        [],[],[],[],[],[],[],[],[],[],
-        [],[],[],[],[],[],[],[],[],[],
-        [],[],[],[],[],[],[],[],[],[],
-        [],[],[],[],[],[],[],[],[],[]
-    ];
+    edge = [];
     b = [
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -87,7 +66,8 @@ function reset(){
         [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
         [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '],
         [' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']
-    ]
+    ];
+    visited = [];
     check = {' ': 100};
     document.querySelector('#board').classList.remove("act");
     set();
@@ -100,6 +80,8 @@ function act(){
             if(ky == ' ') part.unshift(ky);
             else part.push(ky);
             color.push(4);
+            edge.push([]);
+            visited.push(false);
         }
     }
     for(let y=0; y<10; y++) for(let x=0; x<10; x++){
@@ -109,12 +91,29 @@ function act(){
         if(y<9 && key[y][x] != key[y+1][x] && !edge[i].includes(part.indexOf(key[y+1][x]))) edge[i].push(part.indexOf(key[y+1][x]));
         if(x>0 && key[y][x] != key[y][x-1] && !edge[i].includes(part.indexOf(key[y][x-1]))) edge[i].push(part.indexOf(key[y][x-1]));
     }
-    //color할당
+    bfs(0);
     for(let y=0; y<10; y++) for(let x=0; x<10; x++){
         b[y][x] = color[part.indexOf(key[y][x])];
     }
     document.querySelector('#board').classList.add("act");
     set();
+}
+function bfs(i){
+    visited[i] = true;
+    let bool = true;
+    for(let j=0; j<4; j++){
+        bool = true;
+        for(k of edge[i]){
+            if(j == color[k]) bool = false;
+        }
+        if(bool){
+            color[i] = j;
+            break;
+        }
+    }
+    for(k of edge[i]){
+        if(!visited[k]) bfs(k);
+    }
 }
 for(let y=0; y<10; y++) for(let x=0; x<10; x++){
     document.querySelectorAll(".part")[num(x, y)].addEventListener('mouseover', ()=>{
@@ -138,6 +137,6 @@ document.addEventListener('keydown', e=>{
         key[py][px] = e.key;
         set();
     }
-    if(e.key == 'Enter') act();
-    if(e.key == 'Backspace') reset();
+    if(e.key == 'Enter' && making == true) act();
+    if(e.key == 'Backspace' && making == false) reset();
 })
