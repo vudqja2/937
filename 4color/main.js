@@ -1,7 +1,10 @@
-const c = ['white', 'red', 'blue', 'green', 'black'];
+const c = [
+    'white', 'red', 'blue', 'green', 'yellow', 'orange', 'purple', 'cyan', 'blueviolet', 'brown', 'crimson', 'gold', 'grey', 'indigo', 'skyblue', 'yellowgreen', 'tomato', 'rebeccapurple', 'springgreen', 'coral', 'fuchsia', 'maroon', 'lime', 'teal', 'deeppink', 'black'
+];
 let part = [];
 let color = [];
 let edge = [];
+let keys = [" "];
 let b = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -36,13 +39,14 @@ function set(){
     for(let y=0; y<10; y++) for(let x=0; x<10; x++){
         let a = document.querySelectorAll(".part")[num(x, y)];
         a.innerText = key[y][x];
-        a.style.backgroundColor = c[b[y][x]];
+        a.style.backgroundColor = c[b[y][x]%25];
     }
 }
 function reset(){
     part = [];
     color = [];
     edge = [];
+    keys = [" "];
     b = [
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -79,7 +83,7 @@ function act(){
         if(vl>0){
             if(ky == ' ') part.unshift(ky);
             else part.push(ky);
-            color.push(4);
+            color.push(25);
             edge.push([]);
             visited.push(false);
         }
@@ -132,9 +136,13 @@ document.addEventListener('keydown', e=>{
     bool &&= making;
     if(bool){
         check[key[py][px]]--;
-        if(!check[e.key]) check[e.key] = 0;
-        check[e.key]++;
+        if(!check[e.key]){
+            check[e.key] = 0;
+            keys.push(e.key);
+        }
         key[py][px] = e.key;
+        check[e.key]++;
+        b[py][px] = keys.indexOf(e.key);
         set();
     }
     if(e.key == 'Enter' && making == true) act();
