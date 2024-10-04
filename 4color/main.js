@@ -137,10 +137,8 @@ document.addEventListener('keydown', e=>{
     bool &&= making;
     if(bool){
         check[key[py][px]]--;
-        if(!check[e.key]){
-            check[e.key] = 0;
-            keys.push(e.key);
-        }
+        if(!check[e.key]) check[e.key] = 0;
+        if(!keys.includes(e.key)) keys.push(e.key);
         key[py][px] = e.key;
         check[e.key]++;
         b[py][px] = keys.indexOf(e.key);
