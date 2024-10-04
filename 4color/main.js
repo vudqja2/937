@@ -41,7 +41,7 @@ function set(){
         a.innerText = key[y][x];
         a.style.backgroundColor = c[b[y][x]%25];
     }
-    if(!making) for(let y=0; y<10; y++) for(let x=0; x<10; x++) a.style.backgroundColor = c[b[y][x]%25];
+    if(!making) for(let y=0; y<10; y++) for(let x=0; x<10; x++) document.querySelectorAll(".part")[num(x, y)].style.backgroundColor = c[b[y][x]];
 }
 function reset(){
     part = [];
