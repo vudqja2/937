@@ -1,7 +1,7 @@
 let p=[2];
 let n=1;
 document.addEventListener('keydown', f);
-document.addEventListener('click', f);
+document.addEventListener('mousedown', f);
 function f(){
     let a=true;
     for(let i=p[n-1]+1; i>1; i++){
