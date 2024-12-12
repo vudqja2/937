@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+body{
+    background-color: black;
+    color: white;
+}
+h1{
+    position: absolute;
+    width: 100vw;
+    height: 6vmin;
+    text-align: center;
+    line-height: 5.5vmin;
+    font-size: 6vmin;
+    top: calc(50vh - 3vmin);
+}
