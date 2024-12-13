@@ -78,7 +78,7 @@ body > #menu > span > a{
   transform: rotate(calc(var(--i) * 360deg / -8 + 90deg));
   transition: background-color linear 0.5s;
 }
-body > #menu > span > a:hover{
+body > #menu.act > span > a:hover{
   color: var(--cl);
   background: var(--bg);
 }
