@@ -8,5 +8,7 @@ const scriptName = "937";
  * (string) packageName
 */
 function response(room, msg, sender, isGroupChat, replier, imageDB, packageName){
-  replier.reply(msg)
+  replier.reply(room);
+  replier.reply(msg);
+  replier.reply(sender);
 }
