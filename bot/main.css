@@ -25,7 +25,7 @@ input{
   text-align: center;
 }
 input#chatroom{
-  bottom: 95vh;
+  top: 0vh;
   font-size: 5vh;
   border-color: white;
   border-bottom-color: black;
