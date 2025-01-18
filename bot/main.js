@@ -1,20 +1,19 @@
 const chatroom = document.getElementById("chatroom");
 const sender = document.getElementById("sender");
 const msg = document.getElementById("msg");
+const btn = document.getElementById("btn");
 chatroom.value = "chatroom";
 sender.value = "sender";
 msg.focus();
-document.addEventListener('keypress', e=>{
-  if(e.code == 'Enter'){
-    e.preventDefault();
-    msngr.send(msg.value);
-    response(chatroom.value, msg.value, sender.value, false, msngr, "imageDBvalue", "com.kakao.talk");
-    msg.value = "";
-    window.scrollTo(0, document.body.scrollHeight);
-    msg.focus();
-  }
-});
-document.form.addEventListener('submit', e => {return false;})
+const send = ()=>{
+  msngr.send(msg.value);
+  response(chatroom.value, msg.value, sender.value, false, msngr, "imageDBvalue", "com.kakao.talk");
+  msg.value = "";
+  window.scrollTo(0, document.body.scrollHeight);
+  msg.focus();
+};
+msg.addEventListener('keypress', e=>{if(e.code=='Enter')send()});
+btn.addEventListener('click', e=>{send()});
 const msngr = {
   n: 1,
   send: text => {
