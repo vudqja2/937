@@ -48,10 +48,11 @@ div#btn{
   bottom: 0vh;
   right: 0vw;
   width: auto;
-  height: 5vh;
+  height: calc(5vh - 1px);
   background-color: black;
   color: white;
   border-radius: 0;
+  border-top: 1px white solid;
   font-size: 3vh;
   font-weight: bold;
   text-align: center;
@@ -63,6 +64,7 @@ div, span{
   width: auto;
   background-color: white;
   color: black;
+  font-size: 3vh;
   line-height: 5vh;
   font-weight: bold;
   border-radius: 2.5vh;
