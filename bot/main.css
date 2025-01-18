@@ -2,6 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  user-select: none;
 }
 ::-webkit-scrollbar {
   display: none;
@@ -42,6 +43,19 @@ input#msg{
   border-color: white;
   border-top-color: black;
 }
+div#btn{
+  position: absolute;
+  bottom: 0vh;
+  right: 0vw;
+  width: auto;
+  height: 5vh;
+  background-color: black;
+  color: white;
+  border-radius: 0;
+  font-size: 3vh;
+  font-weight: bold;
+  text-align: center;
+}
 div, span{
   position: absolute;
   top: calc(var(--i)*6vh);
@@ -49,6 +63,7 @@ div, span{
   width: auto;
   background-color: white;
   color: black;
+  line-height: 5vh;
   font-weight: bold;
   border-radius: 2.5vh;
   padding-left: 1vw;
