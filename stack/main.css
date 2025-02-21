@@ -16,27 +16,27 @@ body > div{
   display: flex;
   flex-direction: row;
   position: absolute;
-  left: calc(50vw - 50vmin);
-  width: 100vmin;
-  height: 10vmin;
+  left: calc(50vw - 45vmin);
+  width: 90vmin;
+  height: 9vmin;
   border: 3px white solid;
 }
 body > div#A{
-  top: 30vmin;
+  top: calc(50vh - 15.75vmin);
 }
 body > div#S{
-  top: 45vmin;
+  top: calc(50vh - 4.5vmin);
   border-left: 3px rgba(255, 255, 255, 0) solid;
 }
 body > div#B{
-  top: 60vmin;
+  top: calc(50vh + 6.75vmin);
 }
 body > div > div{
   width: 10vmin;
   height: 10vmin;
   border: 1px white solid;
   text-align: center;
-  line-height: 8.75vmin;
+  line-height: 7.75vmin;
   font-size: 5vmin;
   font-weight: bold;
 }
@@ -58,22 +58,22 @@ body > span.act, body > span:hover{
   color: black;
 }
 body > span#psh{
-  top: calc(100vh - 22.5vmin - 2px);
+  top: calc(50vh + 25vmin - 2px);
   left: calc(50vw - 10vmin - 2px);
   border-top-left-radius: 50%;
 }
 body > span#pop{
-  top: calc(100vh - 22.5vmin - 2px);
+  top: calc(50vh + 25vmin - 2px);
   right: calc(50vw - 10vmin - 2px);
   border-top-right-radius: 50%;
 }
 body > span#rmv{
-  top: calc(100vh - 12.5vmin + 2px);
+  top: calc(50vh + 35vmin + 2px);
   left: calc(50vw - 10vmin - 2px);
   border-bottom-left-radius: 50%;
 }
 body > span#rst{
-  top: calc(100vh - 12.5vmin + 2px);
+  top: calc(50vh + 35vmin + 2px);
   right: calc(50vw - 10vmin - 2px);
   border-bottom-right-radius: 50%;
 }
