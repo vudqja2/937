@@ -1,5 +1,7 @@
 :root{
   --time: 0.075s;
+  --w: 5;
+  --h: 5;
 }
 *{
   box-sizing: border-box;
@@ -7,30 +9,30 @@
   padding: 0;
 }
 body{
+  position: relative;
   width: 100vw;
   height: 100vh;
   overflow: hidden;
   box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background-color: black;
   user-select: none;
   overflow: hidden;
 }
 body > div{
-  position: relative;
-  width: 40vmin;
-  height: 40vmin;
+  position: absolute;
+  top: calc(50vh - 20vmin);
+  left: calc(50vw - 20vmin);
+  width: calc(8vmin * var(--w));
+  height: calc(8vmin * var(--h));
   display: grid;
-  grid-template-rows: repeat(5, 1fr);
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(var(--w), 1fr);
+  grid-template-rows: repeat(var(--h), 1fr);
 }
 body > div > span{
   display: block;
   width: 8vmin;
   height: 8vmin;
-  border: 2px white solid;
+  border: 1px white solid;
   border-radius: 50%;
   color: white;
   font-size: 2.9vmin;
@@ -55,4 +57,101 @@ body > div > span.active{
     font-size: 2.9vmin;
     color: black;
   }
+}
+body > span > div{
+  position: absolute;
+}
+body > span > div#up, body > span > div#down{
+  left: calc(50vw - 20vmin);
+  height: 2vmin;
+  width: 40vmin;
+  display: grid;
+  grid-template-columns: repeat(var(--w), 1fr);
+}
+body > span > div#left, body > span > div#right{
+  top: calc(50vh - 20vmin);
+  height: 40vmin;
+  width: 2vmin;
+  display: grid;
+  grid-template-rows: repeat(var(--h), 1fr);
+}
+body > span > div#up{
+  top: calc(50vh - 24vmin);
+}
+body > span > div#down{
+  bottom: calc(50vh - 24vmin);
+}
+body > span > div#left{
+  left: calc(50vw - 24vmin);
+}
+body > span > div#right{
+  right: calc(50vw - 24vmin);
+}
+body > span > div > span{
+  border: 1px rgba(255, 255, 255, 0.5) solid;
+  border-radius: 1vmin;
+}
+body > span > div#up > span, body > span > div#down > span{
+  width: 8vmin;
+  height: 2vmin;
+}
+body > span > div#left > span, body > span > div#right > span{
+  width: 2vmin;
+  height: 8vmin;
+}
+body > span > div#up > span::before{
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  top: calc(1vmin - 50vh);
+  display: block;
+  width: calc(8vmin + 0.5px);
+  height: 50vh;
+  transform: translateX(-1.5px);
+  border-left: 1px rgba(255, 255, 255, 0.125) solid;
+}
+body > span > div#up > span:nth-child(5):before{
+  border-right: 1px rgba(255, 255, 255, 0.125) solid;
+}
+body > span > div#down > span::before{
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  top: 1vmin;
+  display: block;
+  width: calc(8vmin + 0.5px);
+  height: 50vh;
+  transform: translateX(-1.5px);
+  border-left: 1px rgba(255, 255, 255, 0.125) solid;
+}
+body > span > div#down > span:nth-child(5):before{
+  border-right: 1px rgba(255, 255, 255, 0.125) solid;
+}
+body > span > div#left > span::before{
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  left: calc(1vmin - 50vw);
+  display: block;
+  width: 50vw;
+  height: calc(8vmin + 0.5px);
+  transform: translateY(-1.5px);
+  border-top: 1px rgba(255, 255, 255, 0.125) solid;
+}
+body > span > div#left > span:nth-child(5):before{
+  border-bottom: 1px rgba(255, 255, 255, 0.125) solid;
+}
+body > span > div#right > span::before{
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  left: 1vmin;
+  display: block;
+  width: 50vw;
+  height: calc(8vmin + 0.5px);
+  transform: translateY(-1.5px);
+  border-top: 1px rgba(255, 255, 255, 0.125) solid;
+}
+body > span > div#right > span:nth-child(5):before{
+  border-bottom: 1px rgba(255, 255, 255, 0.125) solid;
 }
