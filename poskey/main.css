@@ -2,6 +2,7 @@
   --time: 0.075s;
   --w: 5;
   --h: 5;
+  --t2: 0.5;
 }
 *{
   box-sizing: border-box;
@@ -90,6 +91,10 @@ body > span > div#right{
 body > span > div > span{
   border: 1px rgba(255, 255, 255, 0.5) solid;
   border-radius: 1vmin;
+  transition: background-color var(--time) linear, border var(--time) linear;
+}
+body > span > div > span.active{
+  background-color: white;
 }
 body > span > div#up > span, body > span > div#down > span{
   width: 8vmin;
@@ -99,16 +104,29 @@ body > span > div#left > span, body > span > div#right > span{
   width: 2vmin;
   height: 8vmin;
 }
+body > span > div > span::before{
+  z-index: -1000;
+  transition: border var(--time) linear;
+  transition: background-color var(--time) linear;
+}
+body > span > div > span.active::before{
+  background-color: rgba(255, 255, 255, var(--t2));
+}
 body > span > div#up > span::before{
   content: "";
   box-sizing: border-box;
   position: absolute;
-  top: calc(1vmin - 50vh);
+  top: calc(2vmin - 50vh);
   display: block;
   width: calc(8vmin + 0.5px);
   height: 50vh;
   transform: translateX(-1.5px);
   border-left: 1px rgba(255, 255, 255, 0.125) solid;
+  border-radius: 1vmin;
+}
+body > span > div#up > span.active::before{
+  border-left: 1px rgba(255, 255, 255, var(--t2)) solid;
+  border-right: 1px rgba(255, 255, 255, var(--t2)) solid;
 }
 body > span > div#up > span:nth-child(5):before{
   border-right: 1px rgba(255, 255, 255, 0.125) solid;
@@ -117,12 +135,17 @@ body > span > div#down > span::before{
   content: "";
   box-sizing: border-box;
   position: absolute;
-  top: 1vmin;
+  top: 0vmin;
   display: block;
   width: calc(8vmin + 0.5px);
   height: 50vh;
   transform: translateX(-1.5px);
   border-left: 1px rgba(255, 255, 255, 0.125) solid;
+  border-radius: 1vmin;
+}
+body > span > div#down > span.active::before{
+  border-left: 1px rgba(255, 255, 255, var(--t2)) solid;
+  border-right: 1px rgba(255, 255, 255, var(--t2)) solid;
 }
 body > span > div#down > span:nth-child(5):before{
   border-right: 1px rgba(255, 255, 255, 0.125) solid;
@@ -131,12 +154,17 @@ body > span > div#left > span::before{
   content: "";
   box-sizing: border-box;
   position: absolute;
-  left: calc(1vmin - 50vw);
+  left: calc(2vmin - 50vw);
   display: block;
   width: 50vw;
   height: calc(8vmin + 0.5px);
   transform: translateY(-1.5px);
   border-top: 1px rgba(255, 255, 255, 0.125) solid;
+  border-radius: 1vmin;
+}
+body > span > div#left > span.active::before{
+  border-top: 1px rgba(255, 255, 255, var(--t2)) solid;
+  border-bottom: 1px rgba(255, 255, 255, var(--t2)) solid;
 }
 body > span > div#left > span:nth-child(5):before{
   border-bottom: 1px rgba(255, 255, 255, 0.125) solid;
@@ -145,12 +173,17 @@ body > span > div#right > span::before{
   content: "";
   box-sizing: border-box;
   position: absolute;
-  left: 1vmin;
+  left: 0vmin;
   display: block;
   width: 50vw;
   height: calc(8vmin + 0.5px);
   transform: translateY(-1.5px);
   border-top: 1px rgba(255, 255, 255, 0.125) solid;
+  border-radius: 1vmin;
+}
+body > span > div#right > span.active::before{
+  border-top: 1px rgba(255, 255, 255, var(--t2)) solid;
+  border-bottom: 1px rgba(255, 255, 255, var(--t2)) solid;
 }
 body > span > div#right > span:nth-child(5):before{
   border-bottom: 1px rgba(255, 255, 255, 0.125) solid;
